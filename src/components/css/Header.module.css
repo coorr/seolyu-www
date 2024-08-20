@@ -1,0 +1,12 @@
+.headerNavbar {
+    position: sticky;
+    left: 0;
+    top: 0;
+    height: 70px;
+    width: 100%;
+    z-index: 9999; /* 다른 요소보다 더 위에 쌓이도록 높은 z-index 값 설정 */
+    background-color: #000000;
+  }
+.headerColor { font-size: 35px !important; font-weight: bold !important; }
+.headerLayout { max-width: 98% !important; font-family: 'Asap', sans-serif; font-family: 'Nunito', sans-serif; }
+

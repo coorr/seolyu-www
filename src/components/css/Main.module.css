@@ -1,0 +1,92 @@
+.bodyContainer {
+  height: 92.2vh; /* 전체 화면 높이 */
+  margin: 0;
+  padding: 0;
+  background-color: #14171d; /* 페이지 배경 색상 */
+  color: white; /* 기본 텍스트 색상 */
+  overflow: hidden; /* 스크롤 방지 */
+}
+
+.row {
+  height: 100%;
+}
+
+.leftCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 40%;
+}
+
+.rightCol {
+  position: relative;
+  overflow: hidden;
+  width: 60%;
+}
+
+.imageContainer {
+  height: 100%;
+  width: 100%;
+}
+
+.imgTop, .imgMiddle, .imgBottom {
+  width: 50%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 2;
+  box-shadow: 0 2px 25px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  background: white;
+}
+.imgTop:first-child {
+  top: 10em;
+    left: -15em;
+    z-index: 3;
+}
+.imgBottom:last-child {
+  z-index: 1;
+  top: -10em;
+  left: 15em;
+}
+
+@media (max-width: 850px) { /* 화면이 매우 작은 크기일 때 (모바일) */
+  .rightCol {
+    display: none; /* 이미지 숨기기 */
+  }
+  .leftCol {
+    width: 100%;
+  }
+}
+
+.buttonRequest {
+  align-items: center;
+    font-size: 0.85em;
+    text-align: center;
+    text-decoration: none;
+    width: 175px;
+    height: 45px;
+    margin: 7px 0;
+    background: transparent;
+    color: white;
+    border-radius: 100px;
+    border: 1px solid #39b392;
+    box-shadow: 0 0 0 0 rgba(86, 201, 170, 0.7);
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    margin-top: 15px;
+    background: linear-gradient(40deg, #206653, #56c9aa);
+}
+.h1Title {
+  font-style: normal;
+  color: #56c9aa;
+  font-size: 4em;
+}
+
+

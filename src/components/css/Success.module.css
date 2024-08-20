@@ -1,0 +1,50 @@
+.container {
+    height: 100vh;
+    background-color: rgb(243, 240, 240);
+  }
+
+  .topImgCol {
+    max-height: 22.5vw;
+    max-width: 90vw;
+    height: 160px;
+    width: 640px;
+    margin: auto;
+    background-image: url("/letter2.jpg");
+    background-size: cover;
+    background-position: center;
+    margin-top: 12px;
+  }
+
+  .topTextAreaCol {
+    margin: auto;
+    max-width: 90vw;
+    width: 640px;
+  }
+
+  .topTextBoxDiv {
+    color: rgb(32, 33, 36);
+    font: 400 14px / 20px Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+    background-color: #fff;
+    border: 1px solid rgb(218, 220, 224);
+    border-radius: 8px;
+    margin-bottom: 12px;
+    padding: 24px;
+    padding-top: 22px;
+    position: relative;
+    padding-top: 36px;
+  }
+
+  .topTextBorderDiv {
+    background-color: rgb(95, 42, 4);
+    color: rgba(255, 255, 255, 1);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    height: 10px;
+    left: -1px;
+    position: absolute;
+    top: -1px;
+    width: calc(100% + 2px);
+  }
+  
+
+  

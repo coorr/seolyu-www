@@ -1,0 +1,46 @@
+.navMenu {
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    width: 240px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: absolute;
+  }
+  
+  .navMenu a {
+    color: #333;
+    text-decoration: none;
+    padding: 12px 20px;
+    display: block;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* 호버 효과 */
+  .navMenu a:hover {
+    background-color: #cbd3db;
+    color: #fff;
+  }
+  
+  /* 활성화된 링크 스타일 */
+  .navMenu a.active {
+    background-color: #cbd3db;
+    color: #fff;
+    font-weight: 600;
+  }
+  
+  /* 섹션 스타일 */
+  .navMenu .navItem {
+    padding: 10px 0;
+    /* border-bottom: 1px solid #e9ecef; */
+  }
+  
+  .navMenu .navItem:last-child {
+    border-bottom: none;
+  }
+  
+  .link {
+    border: 1px solid #ddd;
+  }
