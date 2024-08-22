@@ -21,4 +21,5 @@ yarn.lock
 /.next
 public/.idea
 src/.idea
-# .env
+.env.local
+.env.production
