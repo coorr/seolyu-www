@@ -18,6 +18,6 @@ module.exports = withBundleAnalyzer({
     };
   },
   env: {
-    API_URL: process.env.NODE_ENV !== "production" ? "https://api.seolyu.com" : "http://localhost:8080",
+    API_URL: process.env.NODE_ENV === "production" ? "https://api.seolyu.com" : "http://localhost:8080",
   },
 });
