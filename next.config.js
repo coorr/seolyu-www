@@ -17,4 +17,7 @@ module.exports = withBundleAnalyzer({
       plugins: [...config.plugins],
     };
   },
+  env: {
+    API_URL: process.env.NODE_ENV !== "production" ? "https://api.seolyu.com" : "http://localhost:8080",
+  },
 });
