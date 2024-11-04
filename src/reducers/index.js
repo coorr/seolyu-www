@@ -3,6 +3,7 @@ import { combineReducers } from "redux";
 import resumeReviews from "./resumeReviews.js";
 import user from "./user.js";
 import applicant from "./applicant.js";
+import event from "./event.js";
 
 const rootReducer = (state, action) => {
   switch (action.type) {
@@ -13,6 +14,7 @@ const rootReducer = (state, action) => {
         resumeReviews,
         user,
         applicant,
+        event,
       });
       return combineReducer(state, action);
     }

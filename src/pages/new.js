@@ -1,11 +1,12 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Container, Form, Button, Col, Row } from "react-bootstrap";
 import styles from "../components/css/New.module.css";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
 import { APPLICANT } from "../reducers/applicant";
+import { EVENT } from "../reducers/event";
 
 const ApplicantNew = () => {
   const dispatch = useDispatch();
@@ -22,6 +23,17 @@ const ApplicantNew = () => {
   const [errors, setErrors] = useState({});
   const [fileName, setFileName] = useState("+ 이력서 추가하기");
   const fileInputRef = useRef(null);
+  const { event, isActive } = useSelector((state) => state.event);
+
+  useEffect(() => {
+    dispatch({
+      type: EVENT.GET_LIST_REQUEST,
+      data: {
+        isActive: true,
+        category: "RESUME_REVIEW",
+      },
+    });
+  }, [dispatch]);
 
   const validateField = (name, value) => {
     const newErrors = {};
@@ -123,6 +135,14 @@ const ApplicantNew = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // 이벤트 신청 유효성 체크
+    if (!isActive) {
+      alert("현재 이벤트는 마감되었습니다.");
+      return;
+    }
+
+    // 신청자 입력 정보 유효성 체크
     const newErrors = {};
     console.log("formData :", formData);
     Object.keys(formData).forEach((key) => {
@@ -143,6 +163,7 @@ const ApplicantNew = () => {
       position: formData.position,
       httpUrl: formData.resumeURL,
       requestDetails: formData.request,
+      eventId: event.id,
     };
     form.append("applicantPostReqDto", new Blob([JSON.stringify(data)], { type: "application/json" }));
     dispatch({
@@ -267,9 +288,15 @@ const ApplicantNew = () => {
           </Form.Group>
 
           <Form.Group as={Row}>
-            <Button type="submit" className={styles.submitButton}>
-              신청하기
-            </Button>
+            {isActive ? (
+              <Button type="submit" className={styles.submitButton}>
+                신청하기
+              </Button>
+            ) : (
+              <Button type="button" className={styles.disabledButton} disabled>
+                선착순 마감
+              </Button>
+            )}
           </Form.Group>
         </Form>
       </Container>
