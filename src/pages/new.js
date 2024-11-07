@@ -25,15 +25,15 @@ const ApplicantNew = () => {
   const fileInputRef = useRef(null);
   const { event, isActive } = useSelector((state) => state.event);
 
-  useEffect(() => {
-    dispatch({
-      type: EVENT.GET_LIST_REQUEST,
-      data: {
-        isActive: true,
-        category: "RESUME_REVIEW",
-      },
-    });
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch({
+  //     type: EVENT.GET_LIST_REQUEST,
+  //     data: {
+  //       isActive: true,
+  //       category: "RESUME_REVIEW",
+  //     },
+  //   });
+  // }, [dispatch]);
 
   const validateField = (name, value) => {
     const newErrors = {};
